@@ -8,7 +8,7 @@ DEVICE = "cpu"
 ALLOW_CUDA = False
 ALLOW_MPS = False
 
-if torch.cuda.is_available() and ALLOW_CUDA:
+if torch.cuda.is_available():
     DEVICE = "cuda"
 elif (torch.has_mps or torch.backends.mps.is_available()) and ALLOW_MPS:
     DEVICE = "mps"
