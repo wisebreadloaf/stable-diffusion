@@ -12,6 +12,7 @@ if torch.cuda.is_available():
     DEVICE = "cuda"
 elif (torch.has_mps or torch.backends.mps.is_available()) and ALLOW_MPS:
     DEVICE = "mps"
+DEVICE = "cpu"
 print(DEVICE)
 tokenizer = CLIPTokenizer("../data/vocab.json", merges_file="../data/merges.txt")
 model_file = "../data/v1-5-pruned-emaonly.ckpt"
